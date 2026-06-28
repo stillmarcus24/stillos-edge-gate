@@ -1,0 +1,21 @@
+{
+  "name": "stillos-edge-gate",
+  "version": "1.0.0",
+  "description": "A callable trust primitive: grade a trading/strategy track record before committing capital. Returns REAL_EDGE | REGIME_LUCK | NEGATIVE_EV | INSUFFICIENT_DATA with a signed, verifiable receipt. Fail-closed.",
+  "bin": {
+    "stillos-edge-gate": "bin.cjs"
+  },
+  "main": "index.cjs",
+  "scripts": {
+    "test": "node test.cjs"
+  },
+  "keywords": [
+    "edge", "backtest", "out-of-sample", "trading", "strategy", "verification",
+    "mcp", "agent", "trust", "expected-value", "regime", "kalshi", "prediction-market"
+  ],
+  "author": "StillOS / NolaWealth",
+  "license": "MIT",
+  "homepage": "https://nolawealthfinancial.com/notary",
+  "engines": { "node": ">=18" },
+  "files": ["index.cjs", "mcp.cjs", "bin.cjs", "README.md", "LICENSE"]
+}

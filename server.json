@@ -1,0 +1,23 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.github.stillmarcus24/stillos-edge-gate",
+  "description": "Callable trust primitive: grade a trading/strategy track record before committing capital. Returns REAL_EDGE | REGIME_LUCK | NEGATIVE_EV | INSUFFICIENT_DATA with a signed, verifiable receipt. Fail-closed.",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/stillmarcus24/stillos-edge-gate",
+    "source": "github"
+  },
+  "homepage": "https://nolawealthfinancial.com/notary",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "stillos-edge-gate",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "runtimeHint": "npx",
+      "runtimeArguments": [
+        { "type": "positional", "value": "mcp", "description": "run as MCP stdio server" }
+      ]
+    }
+  ]
+}
