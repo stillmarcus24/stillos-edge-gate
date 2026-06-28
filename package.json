@@ -1,6 +1,7 @@
 {
   "name": "stillos-edge-gate",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "mcpName": "io.github.stillmarcus24/stillos-edge-gate",
   "description": "A callable trust primitive: grade a trading/strategy track record before committing capital. Returns REAL_EDGE | REGIME_LUCK | NEGATIVE_EV | INSUFFICIENT_DATA with a signed, verifiable receipt. Fail-closed.",
   "bin": {
     "stillos-edge-gate": "bin.cjs"
