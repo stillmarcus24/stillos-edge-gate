@@ -44,4 +44,4 @@ const { gradeStrategy } = require('stillos-edge-gate');
 const v = gradeStrategy(trades); // { verdict, train, test, t_stat, reasons }
 ```
 
-MIT. https://nolawealthfinancial.com/notary
+MIT. https://stillosdigitalholdings.com/notary
