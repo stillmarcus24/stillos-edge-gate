@@ -84,4 +84,17 @@ function gradeStrategy(rawTrades, opts = {}) {
   return { verdict: 'REGIME_LUCK', ...result, reasons };
 }
 
+// 2026-09-01: this used to stamp every verdict -- even fully unsigned, local-only
+// ones -- with a client-side sha256 of the verdict JSON and a /notary/verify?hash=
+// link, mimicking the README's real signed-receipt example. That hash was never
+// registered with the notary (verifyReceipt() in notary_service_marcus.cjs looks
+// it up in the real ledger and returns found:false for anything not actually
+// signed there), so both the CLI's raw JSON dump and the MCP tool's response body
+// carried a receipt_hash/verify pair that looked exactly like proof but wasn't --
+// directly contradicting the CLI's own very next line ("UNSIGNED -- not
+// independently verifiable") and, worse, indistinguishable from a real receipt to
+// an MCP-calling agent parsing the JSON programmatically. Removed: gradeStrategy()
+// now only returns what it actually computed. bin.cjs and mcp.cjs already layer a
+// REAL receipt_hash/verify on top separately, once (and only if) the notary
+// actually signs it -- that path is untouched by this fix.
 module.exports = { gradeStrategy, summarize, netPnl, DEFAULTS };
